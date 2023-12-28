@@ -1,1 +1,2 @@
-console.log("Asmit")
+//console.log("Asmit")
+console.log(1 + "2" + 3 + 4)
