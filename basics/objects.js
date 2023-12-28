@@ -36,6 +36,17 @@ const obj3 = { 5: "e", 6: "f" }
 const obj4 = { ...obj1, ...obj2, ...obj3 }
 // console.log(obj4)
 
-console.log(Object.keys(User)) //return an array of keys
-console.log(Object.values(User))
-console.log(User.hasOwnProperty("email"))
+// console.log(Object.keys(User)) //return an array of keys
+// console.log(Object.values(User))
+// console.log(User.hasOwnProperty("email"))
+
+// Destructuring
+
+const course = {
+  coursename: "js course",
+  price: "999",
+  courseInstructor: "asmit",
+}
+
+const { courseInstructor: instructor } = course
+console.log(instructor)
