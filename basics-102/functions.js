@@ -24,7 +24,17 @@ const user = {
 //     return num1 + num2
 // }
 
-const addTwo = (num1, num2) => num1 + num2 // implicit return
+// const addTwo = (num1, num2) => num1 + num2 // implicit return
 
-const reutnObject = (a, b) => ({ username: "asmit" })
-console.log(addTwo(3, 4))
+// const reutnObject = (a, b) => ({ username: "asmit" })
+// console.log(addTwo(3, 4))
+
+// Immediately invoked function expressions 
+
+(function chai(){
+    console.log(`DB CONNECTED`)
+})();
+
+((name) => {
+    console.log(`DB2 CONNECTED ${name}`)
+})('asmit')
