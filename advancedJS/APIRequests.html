@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    something
+    <button id="getData">Get Data</button>
+    <div id="card"></div>
+  </body>
+  <script>
+    const requestURL = "https://api.github.com/users/asmitsharp"
+    let img
+    let followers
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", requestURL)
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState)
+      if (xhr.readyState === 4) {
+        //console.log(this.responseText) // CURRENT CONTEXT
+        //console.log(typeof data)
+        // console.log(data.following)
+        const data = JSON.parse(this.responseText)
+        img = data.avatar_url
+        followers = data.followers
+      }
+    }
+    xhr.send()
+
+    const card = document.querySelector("#card")
+    const getData = document
+      .querySelector("#getData")
+      .addEventListener("click", function (e) {
+        card.innerHTML = `
+            <img src="${img}" alt="avatar" ></img>
+            <h2>${followers}</h2>
+        `
+      })
+  </script>
+</html>
